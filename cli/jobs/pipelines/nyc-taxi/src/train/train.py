@@ -9,6 +9,7 @@ from pathlib import Path
 from uuid import uuid4
 from datetime import datetime
 
+from sklearn.linear_model import Ridge  # add it to run instead regression in the model
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
@@ -78,8 +79,10 @@ trainX, testX, trainy, testy = train_test_split(X, y, test_size=0.25, random_sta
 print(trainX.shape)
 print(trainX.columns)
 
-# Train a Linear Regression Model with the train set
-model = LinearRegression().fit(trainX, trainy)
+# Original => Train a Linear Regression Model with the train set
+# Original => model = LinearRegression().fit(trainX, trainy)
+# Train a Model with Ridge with the train set
+model = Ridge(alpha=0.2).fit(trainX, trainy)
 print(model.score(trainX, trainy))
 
 

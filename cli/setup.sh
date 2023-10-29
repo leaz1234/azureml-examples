@@ -28,7 +28,7 @@ az extension add -n ml -y
 # <set_variables>
 #RESOURCE_GROUP_NAME="cloudml"
 GROUP="test-resource"
-LOCATION="eastus2"
+LOCATION="eastus2" 
 WORKSPACE="demo-azureleaoct24"
 # </set_variables>
 
